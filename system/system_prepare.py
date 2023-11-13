@@ -14,4 +14,17 @@ with open(r'system/has_setup.txt', 'r') as setup:
 import pandas as pd
 from rich.traceback import install
 from rich import print
+from rich.console import Console
+from rich.table import Table
+console = Console()
 install()
+
+clear_screen = lambda: print('\n'*100)
+separators = lambda: print('>'*60)
+title_print = lambda: print('[bright_cyan]█▀▀ █▀█ █▀▀ ▄▀█ ▀█▀ █▀█ █▀█ █▀▀   █▀▄ █   █▀█ █ █ █ ▀█\n█▄▄ █▀▄ ██▄ █▀█  █  █▄█ █▀▄ ██▄   █▄▀ █   ▀▀█ █▄█ █ █▄')
+
+def roll_credits():
+    title_print()
+    separators()
+    print('\n[bright_green]Obrigado por usar![/bright_green]\n\nFeito por [bright_yellow]Zac Milioli[/bright_yellow]\n-\thttps://www.linkedin/in/zac-milioli\n-\thttps://github.com/Zac-Milioli\n-\t[bright_blue][underline]zacmilioli@gmail.com[/underline][/bright_blue]\n')
+    separators()
