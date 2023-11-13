@@ -1,3 +1,4 @@
 
 system/*.csv
 output/*.csv
+__pycache__
