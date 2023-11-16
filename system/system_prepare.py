@@ -16,6 +16,8 @@ from rich.traceback import install
 from rich import print
 from rich.console import Console
 from rich.table import Table
+from system.quiz import *
+from system.quiz_dep import *
 console = Console()
 install()
 

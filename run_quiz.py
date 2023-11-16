@@ -1,7 +1,7 @@
 # Execute para aplicar o questionário
 
 from system.system_prepare import *
-
+clear_screen()
 menu = True
 
 while menu:
