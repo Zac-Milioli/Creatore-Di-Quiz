@@ -1,9 +1,7 @@
 from system.system_prepare import *
 
 class Quiz:
-    def __init__(self, nome: str, perguntas: list, id: list, respostas: list, type, dep):
-        self.type= 'Quiz'
-        self.dep = QuizDep()
+    def __init__(self, nome: str, perguntas: list, id: list, respostas: list):
         self.nome = nome
         self.perguntas = perguntas
         self.id = id
@@ -33,8 +31,8 @@ class Quiz:
     def save_quiz(self):
         df = pd.DataFrame({'ID': self.id, 'Perguntas': self.perguntas})
         try:
-            df.to_csv(f'system/&{self.type}&{self.get_nome()}&.csv', sep=';')
-            print(f'[bright_yellow]system/&{self.type}&{self.get_nome()}&.csv CRIADO')
+            df.to_csv(f'system/Quiz&{self.get_nome()}&.csv', sep=';')
+            print(f'[bright_yellow]system/Quiz&{self.get_nome()}&.csv CRIADO')
         except:
             print(f'[bright_red]AVISO: não foi possível salvar o arquivo.\nVerifique o formato:[/bright_red]\n{self.ver_quiz()}\n{df}\n')
 
@@ -68,7 +66,7 @@ class Quiz:
 
 def load_quiz(csv:str):
     loaded = pd.read_csv(csv, sep=';')
-    quiz_name = csv.split('&')[2]
+    quiz_name = csv.split('&')[1]
     questions = []
     ids = []
     for i in loaded.index:
