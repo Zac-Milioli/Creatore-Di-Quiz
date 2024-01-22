@@ -35,6 +35,5 @@ while menu:
     else:
         clear_screen()
         print('[bright_red]Selecione uma opção válida\n\n')
-        clear_screen()
 
 roll_credits()
